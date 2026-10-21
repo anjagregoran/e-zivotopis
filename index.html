@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anja Gregoran Jenul · e-životopis</title>
+<meta name="description" content="E-životopis Anje Gregoran Jenul, studentice poslovne ekonomije, web dizajnerice i autorice sadržaja o razmjeni u SAD-u.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf8f3; --card:#fffdfa; --ink:#2a403b; --muted:#6f756d; --line:#ece4d8;
+  --sage:#e3ede0; --rose:#f6e5df; --sand:#f4ead6; --sky:#e2ecf2;
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Instrument Sans", -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:max(20px, env(safe-area-inset-left, 0px))}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+.label{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* Navigation */
+.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font-family:var(--serif);font-size:22px;text-decoration:none}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14.5px}
+.nav ul a{text-decoration:none;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+
+/* Hero */
+.hero{padding-block:72px 56px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(48px,7vw,86px)}
+.hero h1 em{font-style:italic}
+.hero .role{font-size:19px;margin-top:18px;max-width:34ch}
+.hero .lede{color:var(--muted);margin-top:18px;max-width:52ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:99px;font-weight:500;text-decoration:none;font-size:15px;transition:transform .2s ease, background .2s ease}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.ghost{border:1px solid var(--ink)}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,.nav a:focus-visible,.card a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.portrait{position:relative}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:28px}
+.portrait .tag{position:absolute;left:-18px;bottom:28px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;font-size:14px;box-shadow:0 10px 30px rgba(42,64,59,.08)}
+.portrait .tag b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.1}
+
+/* Facts */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:8px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 22px}
+.fact b{display:block;font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.05}
+.fact span{color:var(--muted);font-size:14px}
+
+/* Sections */
+section{padding-block:72px;scroll-margin-top:70px}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:34px}
+.sec-head h2{font-size:clamp(34px,4.6vw,52px)}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+.about p{font-size:17.5px;max-width:58ch}
+.about p + p{margin-top:16px}
+.about .quote{font-family:var(--serif);font-size:clamp(26px,3vw,34px);line-height:1.25}
+.about .quote em{font-style:italic}
+
+/* Timeline */
+.timeline{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.timeline li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;padding:28px 0;border-bottom:1px solid var(--line)}
+.timeline .when{font-size:14.5px;color:var(--muted)}
+.timeline .when b{display:block;color:var(--ink);font-weight:500;font-size:15px}
+.timeline h3{font-size:28px}
+.timeline .where{color:var(--muted);margin-top:4px}
+.timeline p{margin-top:12px;max-width:62ch}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:0;list-style:none}
+.pills li{border-radius:99px;padding:6px 14px;font-size:14px;background:var(--sage)}
+
+/* Work */
+.work{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(42,64,59,.08)}
+.card img{aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+.card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:25px}
+.card p{color:var(--muted);font-size:15px}
+.card a.go{margin-top:auto;padding-top:10px;font-weight:500;font-size:15px;text-underline-offset:4px}
+.card.text{background:var(--sand);border-color:transparent;justify-content:center}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.box h3{font-size:26px}
+.box .pills li{background:var(--sky)}
+.box.soft .pills li{background:var(--rose)}
+.langs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.langs li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.langs li:first-child{border-top:0}
+.langs span{color:var(--muted)}
+
+/* Hobbies */
+.hobbies{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hobby{border-radius:20px;padding:22px;background:var(--sage);display:flex;flex-direction:column;gap:6px}
+.hobby:nth-child(3n+2){background:var(--rose)}
+.hobby:nth-child(3n){background:var(--sand)}
+.hobby b{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1}
+.hobby span{font-size:15px;color:var(--muted)}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:32px;padding:56px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:end}
+.contact h2{font-size:clamp(36px,5vw,58px)}
+.contact h2 em{font-style:italic}
+.contact p{opacity:.8;margin-top:14px;max-width:44ch}
+.contact ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.contact li{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid color-mix(in srgb, var(--bg) 22%, transparent)}
+.contact li:first-child{border-top:0}
+.contact li span{opacity:.7;font-size:14px}
+.contact a{color:var(--bg);text-underline-offset:4px;overflow-wrap:anywhere}
+
+footer{padding-block:36px 48px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* Gentle entrance */
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .8s ease both}
+  .rise.d2{animation-delay:.12s}
+  .rise.d3{animation-delay:.24s}
+  @keyframes rise{from{opacity:.001;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card{transition:none}}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero .wrap,.about,.contact{grid-template-columns:1fr}
+  .hero{padding-block:44px 32px}
+  .portrait{max-width:420px}
+  .portrait .tag{left:12px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .work,.skills{grid-template-columns:1fr 1fr}
+  .hobbies{grid-template-columns:1fr 1fr}
+  .timeline li{grid-template-columns:1fr;gap:8px}
+  .contact{padding:36px 26px}
+  section{padding-block:52px}
+}
+@media (max-width:560px){
+  .work,.skills,.hobbies{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Glavna navigacija">
+  <div class="wrap">
+    <a class="brand" href="#">Anja Gregoran Jenul</a>
+    <ul>
+      <li><a href="#o-meni">O meni</a></li>
+      <li><a href="#obrazovanje">Obrazovanje</a></li>
+      <li><a href="#iskustvo">Iskustvo</a></li>
+      <li><a href="#radovi">Radovi</a></li>
+      <li><a href="#vjestine">Vještine</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="label rise">E-životopis</p>
+      <h1 class="rise d2">Anja <em>Gregoran Jenul</em></h1>
+      <p class="role rise d2">Studentica poslovne ekonomije, web dizajnerica i autorica sadržaja o razmjeni u SAD-u.</p>
+      <p class="lede rise d3">Volim stvarati, bilo rukama, bilo na ekranu. Izrađujem web stranice za male tvrtke, snimam i montiram videe za mlade koji sanjaju o razmjeni i stalno tražim nove načine da dobru ideju pretvorim u nešto lijepo i korisno.</p>
+      <div class="btns rise d3">
+        <a class="btn primary" href="mailto:anja.gregoran1@gmail.com">Pošalji mi e-mail</a>
+        <a class="btn ghost" href="#radovi">Pogledaj moje radove</a>
+      </div>
+    </div>
+    <div class="portrait rise d2">
+      <img src="img/anja.jpg" width="600" height="600" alt="Anja Gregoran Jenul u zelenom džemperu, u prirodi">
+      <div class="tag"><b>2. godina</b>Ekonomski fakultet u Rijeci</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="facts" aria-label="Ukratko">
+    <div class="fact"><b>10 mjeseci</b><span>srednjoškolske razmjene u SAD-u</span></div>
+    <div class="fact"><b>5</b><span>izrađenih web stranica</span></div>
+    <div class="fact"><b>13 tisuća</b><span>pratitelja na Instagramu</span></div>
+    <div class="fact"><b>3 jezika</b><span>hrvatski, engleski i slovenski</span></div>
+  </div>
+</div>
+
+<main>
+  <section id="o-meni">
+    <div class="wrap about">
+      <div class="sec-head">
+        <p class="label">O meni</p>
+        <p class="quote">Kreativna sam u svakom smislu, od <em>ručnih radova</em> do <em>web stranica</em>.</p>
+      </div>
+      <div>
+        <p>Treći razred srednje škole provela sam na razmjeni u malom gradu blizu Kalamazooa u Michiganu. Ta me godina naučila samostalnosti i hrabrosti, ali i tome koliko je važno znati se predstaviti, pa danas svoje iskustvo dijelim s mladima iz Hrvatske i regije koji maštaju o istom.</p>
+        <p>Studiram poslovnu ekonomiju na Ekonomskom fakultetu u Rijeci, smjer Poduzetništvo, a uz studij razvijam vlastiti posao izrade web stranica za male tvrtke i obrte. Najviše volim projekte u kojima mogu spojiti poslovno razmišljanje s kreativnošću, bilo da nešto izrađujem rukama ili na računalu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="obrazovanje">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Obrazovanje</p>
+        <h2>Gdje učim i gdje sam rasla</h2>
+      </div>
+      <ul class="timeline">
+        <li>
+          <div class="when"><b>2025. – danas</b>2. godina</div>
+          <div>
+            <h3>Ekonomski fakultet Sveučilišta u Rijeci</h3>
+            <p class="where">Sveučilišni prijediplomski studij Poslovna ekonomija, smjer Poduzetništvo, izvanredni studij</p>
+            <p>Studij mi daje temelje iz ekonomije, računovodstva, statistike, prava i menadžmenta, a smjer Poduzetništvo uči me kako ideju pretvoriti u održiv posao.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when"><b>10 mjeseci</b>Treći razred srednje škole</div>
+          <div>
+            <h3>Srednjoškolska razmjena u SAD-u</h3>
+            <p class="where">Michigan, SAD · program razmjene s vizom J-1, preko agencije BHV Education</p>
+            <p>Cijelu sam školsku godinu pohađala američku srednju školu u malom gradu blizu Kalamazooa i živjela s obitelji domaćina. Naučila sam se snalaziti u potpuno novoj kulturi, steći prijatelje na drugom kontinentu i svaki dan govoriti engleski.</p>
+            <ul class="pills">
+              <li>Samostalnost</li>
+              <li>Prilagodljivost</li>
+              <li>Tečan engleski</li>
+              <li>Nova kultura</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="iskustvo">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Iskustvo</p>
+        <h2>Što radim uz studij</h2>
+      </div>
+      <ul class="timeline">
+        <li>
+          <div class="when"><b>2026. – danas</b>Samostalno</div>
+          <div>
+            <h3>Web dizajn i izrada web stranica</h3>
+            <p class="where">Za male tvrtke, obrte i vlastite projekte</p>
+            <p>Dizajniram i izrađujem moderne web stranice, od prvog razgovora s klijentom do objave stranice na internetu. Za prevoditeljsku agenciju Orbita prijevodi izradila sam potpuno novu, interaktivnu stranicu s posebnom podstranicom za svaku uslugu. U radu se služim i alatima umjetne inteligencije, koji mi pomažu da brže isprobam ideje i klijentu pokažem više rješenja.</p>
+            <ul class="pills">
+              <li>Dizajn</li>
+              <li>Izrada i objava stranica</li>
+              <li>Rad s klijentima</li>
+              <li>Alati umjetne inteligencije</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when"><b>Uz studij</b>Instagram i TikTok</div>
+          <div>
+            <h3>Abroad Life with Anja</h3>
+            <p class="where">Autorica sadržaja o srednjoškolskoj razmjeni i životu u inozemstvu</p>
+            <p>Na društvenim mrežama dijelim savjete o razmjeni u SAD-u s mladima iz Hrvatske i regije, a zajednica broji oko 13 tisuća pratitelja na Instagramu. Sama snimam i montiram videe, odgovaram na pitanja pratitelja i pišem besplatne vodiče, među kojima je i detaljan vodič na hrvatskom jeziku o stipendijama, agencijama i načinima financiranja razmjene.</p>
+            <ul class="pills">
+              <li>Snimanje i montaža videa</li>
+              <li>Pisanje vodiča</li>
+              <li>Komunikacija sa zajednicom</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="radovi">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Radovi</p>
+        <h2>Web stranice koje sam izradila</h2>
+      </div>
+      <div class="work">
+        <article class="card">
+          <img src="img/orbita-new.jpg" width="1200" height="750" alt="Naslovnica web stranice Orbita prijevodi" loading="lazy">
+          <div class="body">
+            <h3>Orbita prijevodi</h3>
+            <p>Nova stranica prevoditeljske agencije s interaktivnim globusom i posebnom podstranicom za svaku uslugu.</p>
+            <a class="go" href="https://anjagregoran.github.io/orbita-prijevodi/" target="_blank" rel="noopener">Pogledaj stranicu</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/abroad-now.jpg" width="1200" height="750" alt="Naslovnica web stranice Abroad Life with Anja" loading="lazy">
+          <div class="body">
+            <h3>Abroad Life with Anja</h3>
+            <p>Stranica s vodičima i savjetima za učenike koji žele na razmjenu u SAD.</p>
+            <a class="go" href="https://anjagregoran.github.io/abroadwithanja/" target="_blank" rel="noopener">Pogledaj stranicu</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/natural-after.jpg" width="1200" height="750" alt="Naslovnica web stranice Prirodno s Anjom" loading="lazy">
+          <div class="body">
+            <h3>Prirodno s Anjom</h3>
+            <p>Stranica posvećena zdravlju i prirodnom načinu života.</p>
+            <a class="go" href="https://naturallywithanja.com/" target="_blank" rel="noopener">Pogledaj stranicu</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/taste-after.jpg" width="1200" height="750" alt="Naslovnica web stranice Taste the Map" loading="lazy">
+          <div class="body">
+            <h3>Taste the Map</h3>
+            <p>Putopisna stranica o hrani, mjestima i skrivenim kutcima Europe.</p>
+            <a class="go" href="https://anjagregoran.github.io/nas-dvije-po-svijetu/" target="_blank" rel="noopener">Pogledaj stranicu</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/cafe-photo-desktop.jpg" width="1200" height="750" alt="Naslovnica web stranice More Café &amp; Brunch" loading="lazy">
+          <div class="body">
+            <h3>More Café &amp; Brunch</h3>
+            <p>Koncept stranice za kafić i brunch s ručno crtanim ilustracijama.</p>
+            <a class="go" href="https://anjagregoran.github.io/cafe-brunch/" target="_blank" rel="noopener">Pogledaj stranicu</a>
+          </div>
+        </article>
+        <article class="card text">
+          <div class="body">
+            <p class="label">Portfelj</p>
+            <h3>Sve na jednom mjestu</h3>
+            <p>Usporedbe stranica prije i poslije, način rada i usluge koje nudim.</p>
+            <a class="go" href="https://anjagregoran.github.io/portfolio/" target="_blank" rel="noopener">Otvori portfelj</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="vjestine">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Vještine i jezici</p>
+        <h2>Što znam i u čemu uživam</h2>
+      </div>
+      <div class="skills">
+        <div class="box">
+          <h3>Digitalne vještine</h3>
+          <ul class="pills">
+            <li>Izrada web stranica</li>
+            <li>Alati umjetne inteligencije</li>
+            <li>Snimanje i montaža videa</li>
+            <li>Fotografija</li>
+            <li>Društvene mreže</li>
+            <li>Microsoft Word i Excel</li>
+          </ul>
+        </div>
+        <div class="box soft">
+          <h3>Osobne vještine</h3>
+          <ul class="pills">
+            <li>Kreativnost</li>
+            <li>Samostalnost</li>
+            <li>Komunikacija</li>
+            <li>Prilagodljivost</li>
+            <li>Organizacija</li>
+            <li>Rad s ljudima</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Jezici</h3>
+          <ul class="langs">
+            <li>Hrvatski <span>materinski</span></li>
+            <li>Engleski <span>tečno</span></li>
+            <li>Slovenski <span>dobro</span></li>
+            <li>Talijanski <span>učim</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hobiji">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Hobiji</p>
+        <h2>Kad nisam za računalom</h2>
+      </div>
+      <div class="hobbies">
+        <div class="hobby"><b>Ples</b><span>Plešem s puno ljubavi i osvojila sam medalje na natjecanjima.</span></div>
+        <div class="hobby"><b>Glazba</b><span>Sviram klavir, gitaru i bubnjeve.</span></div>
+        <div class="hobby"><b>Ručni radovi</b><span>Volim izrađivati stvari vlastitim rukama.</span></div>
+        <div class="hobby"><b>Fotografija</b><span>Fotografiram ljude, prirodu i male trenutke.</span></div>
+        <div class="hobby"><b>Video</b><span>Snimam i montiram videe od ideje do objave.</span></div>
+        <div class="hobby"><b>Šetnje</b><span>Svaki dan pronađem vremena za šetnju u prirodi.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <p class="label" style="color:inherit;opacity:.7">Kontakt</p>
+          <h2>Javite mi se, <em>rado ću odgovoriti.</em></h2>
+          <p>Za suradnju, izradu web stranice ili bilo kakvo pitanje najbrže ćete me dobiti e-mailom.</p>
+        </div>
+        <ul>
+          <li><span>E-mail</span><a href="mailto:anja.gregoran1@gmail.com">anja.gregoran1@gmail.com</a></li>
+          <li><span>Instagram</span><a href="https://www.instagram.com/abroadlifewithanja/" target="_blank" rel="noopener">@abroadlifewithanja</a></li>
+          <li><span>Portfelj</span><a href="https://anjagregoran.github.io/portfolio/" target="_blank" rel="noopener">anjagregoran.github.io/portfolio</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026. Anja Gregoran Jenul</span>
+    <span>E-životopis izrađen za kolegij Informacijsko-komunikacijske tehnologije u ekonomiji i poslovanju, EFRI, uz pomoć alata umjetne inteligencije.</span>
+  </div>
+</footer>
+
+</body>
+</html>
