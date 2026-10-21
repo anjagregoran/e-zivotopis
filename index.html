@@ -85,6 +85,9 @@ section{padding-block:72px;scroll-margin-top:70px}
 .card img{aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
 .card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card h3{font-size:25px}
+.kind{align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:99px;padding:3px 10px;background:var(--sand)}
+.kind.client{background:var(--sage)}
+.intro{color:var(--muted);max-width:60ch}
 .card p{color:var(--muted);font-size:15px}
 .card a.go{margin-top:auto;padding-top:10px;font-weight:500;font-size:15px;text-underline-offset:4px}
 .card.text{background:var(--sand);border-color:transparent;justify-content:center}
@@ -252,8 +255,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <div class="when"><b>2026. – danas</b>Samostalno</div>
           <div>
             <h3>Web dizajn i izrada web stranica</h3>
-            <p class="where">Za male tvrtke, obrte i vlastite projekte</p>
-            <p>Dizajniram i izrađujem moderne web stranice, od prvog razgovora s klijentom do objave stranice na internetu. Za prevoditeljsku agenciju Orbita prijevodi izradila sam potpuno novu, interaktivnu stranicu s posebnom podstranicom za svaku uslugu. U radu se služim i alatima umjetne inteligencije, koji mi pomažu da brže isprobam ideje i klijentu pokažem više rješenja.</p>
+            <p class="where">Za klijente i vlastite kreativne projekte</p>
+            <p>Dizajniram i izrađujem moderne web stranice, od prve ideje do objave na internetu. Za prvu klijenticu, prevoditeljsku agenciju Orbita prijevodi, izradila sam potpuno novu, interaktivnu stranicu s posebnom podstranicom za svaku uslugu, a ostale stranice izrađujem iz zabave, kao kreativne projekte. U radu se služim i alatima umjetne inteligencije, koji mi pomažu da brže isprobam ideje i klijentu pokažem više rješenja.</p>
             <ul class="pills">
               <li>Dizajn</li>
               <li>Izrada i objava stranica</li>
@@ -284,11 +287,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="sec-head">
         <p class="label">Radovi</p>
         <h2>Web stranice koje sam izradila</h2>
+        <p class="intro">Prvu sam stranicu izradila za klijenta, a ostale iz zabave, jer volim stvarati i isprobavati nove ideje.</p>
       </div>
       <div class="work">
         <article class="card">
           <img src="img/orbita-new.jpg" width="1200" height="750" alt="Naslovnica web stranice Orbita prijevodi" loading="lazy">
           <div class="body">
+            <span class="kind client">Klijent</span>
             <h3>Orbita prijevodi</h3>
             <p>Nova stranica prevoditeljske agencije s interaktivnim globusom i posebnom podstranicom za svaku uslugu.</p>
           </div>
@@ -296,6 +301,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <article class="card">
           <img src="img/abroad-now.jpg" width="1200" height="750" alt="Naslovnica web stranice Abroad Life with Anja" loading="lazy">
           <div class="body">
+            <span class="kind">Osobni projekt</span>
             <h3>Abroad Life with Anja</h3>
             <p>Stranica s vodičima i savjetima za učenike koji žele na razmjenu u SAD.</p>
           </div>
@@ -303,6 +309,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <article class="card">
           <img src="img/natural-after.jpg" width="1200" height="750" alt="Naslovnica web stranice Prirodno s Anjom" loading="lazy">
           <div class="body">
+            <span class="kind">Osobni projekt</span>
             <h3>Prirodno s Anjom</h3>
             <p>Stranica posvećena zdravlju i prirodnom načinu života.</p>
           </div>
@@ -310,6 +317,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <article class="card">
           <img src="img/taste-after.jpg" width="1200" height="750" alt="Naslovnica web stranice Taste the Map" loading="lazy">
           <div class="body">
+            <span class="kind">Osobni projekt</span>
             <h3>Taste the Map</h3>
             <p>Putopisna stranica o hrani, mjestima i skrivenim kutcima Europe.</p>
           </div>
@@ -317,6 +325,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <article class="card">
           <img src="img/cafe-photo-desktop.jpg" width="1200" height="750" alt="Naslovnica web stranice More Café &amp; Brunch" loading="lazy">
           <div class="body">
+            <span class="kind">Osobni projekt</span>
             <h3>More Café &amp; Brunch</h3>
             <p>Koncept stranice za kafić i brunch s ručno crtanim ilustracijama.</p>
           </div>
